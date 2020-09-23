@@ -1,0 +1,47 @@
+<div class="fondo animated fadeIn">
+    <div class="centrar">
+        <mat-card class="example-card">
+            <mat-card-header class="text-login">
+                <mat-card-title>Iniciar Sesion</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="example-form" [formGroup]="formGroup">
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="email" placeholder="Email" name="email"
+                                        autocomplete="off" required>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput formControlName="password" placeholder="Password" type="password"
+                                        autocomplete="off" name="password" required>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-checkbox color="primary" class="example-margin">Recordarme</mat-checkbox>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </mat-card-content>
+            <mat-card-actions class="btn-login">
+
+                <button type="button" 
+                    (click)="login()"
+                    [disabled]="!esValidoFormulario()"
+                    mat-raised-button color="primary">
+                    Ingresar
+                </button>
+
+            </mat-card-actions>
+
+        </mat-card>
+    </div>
+</div>

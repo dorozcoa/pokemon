@@ -1,0 +1,30 @@
+.example-card {
+    width: 300px;
+}
+ 
+.fondo {
+    width: 100%;
+    height: 100%;
+    background-color: #4c3575;
+}
+ 
+.centrar {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .example-full-width {
+      width: 100%;
+  }
+ 
+  .btn-login {
+      display: flex;
+      justify-content: center;
+  }
+ 
+  .text-login {
+    display: flex;
+    justify-content: center;
+  }

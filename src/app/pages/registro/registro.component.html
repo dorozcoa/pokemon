@@ -1,0 +1,52 @@
+<div class="fondo">
+  <div class="centrar">
+      <mat-card class="example-card">
+          <mat-card-header class="text-login">
+              <mat-card-title>Crear nueva cuenta</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+              <form class="example-form" [formGroup]="formGroup">
+                  <table class="example-full-width" cellspacing="0">
+                      <tr>
+                          <td>
+                              <mat-form-field class="example-full-width">
+                                  <input matInput formControlName="email" placeholder="Email" name="email"
+                                      autocomplete="off" required>
+                              </mat-form-field>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput formControlName="nombre" placeholder="Nombre completo" name="nombre"
+                                    autocomplete="off" required>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                      <tr>
+                          <td>
+                              <mat-form-field class="example-full-width">
+                                  <input matInput formControlName="password" placeholder="Password" type="password"
+                                      autocomplete="off" name="password" required>
+                              </mat-form-field>
+                          </td>
+                      </tr>
+                  </table>
+              </form>
+          </mat-card-content>
+          <mat-card-actions class="btn-login">
+ 
+              <button type="button" 
+                  (click)="registrar()"
+                  [disabled]="!esValidoFormulario()"
+                  mat-raised-button color="primary">
+                  Crear cuenta
+              </button>
+ 
+          </mat-card-actions>
+ 
+          <a class="text-login" routerLink="/login"><small>¿Ya tienes cuenta?</small></a>
+ 
+      </mat-card>
+  </div>
+</div>

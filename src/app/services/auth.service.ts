@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { LoginModel } from '../models/login.model';
+import { UsuarioModel } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +74,24 @@ export class AuthService {
       return false;
     }
   }
+  
+  nuevoUsuario( usuario: UsuarioModel){
+ 
+    const authData = {
+      ...usuario,
+      returnSecureToken: true
+    }
+ 
+    return this.http.post(
+      `${ this.url }signUp?key=${ this.apiKey }`,
+      authData
+    ).pipe(
+      map( resp => {
+        this.guardarToken( resp['idToken'] );
+        return resp;
+      })
+    );
+  }
+
   
 }

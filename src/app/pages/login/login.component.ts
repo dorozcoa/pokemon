@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginModel } from '../../models/login.model';
 import { SweetAlertService } from '../../services/sweet-alert.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,9 @@ export class LoginComponent implements OnInit {
   public loginModel: LoginModel = new LoginModel();
   public recordarme: boolean = false;
 
-  constructor(private builder: FormBuilder, private router: Router,
+  constructor(private builder: FormBuilder, private _auth: AuthService, private router: Router,
     private _sa: SweetAlertService ) { }
+
 
   ngOnInit() {
     this.crearFormulario();
@@ -44,6 +46,23 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
+    this.loginModel = this.formGroup.value;
+
+    this._auth.login(this.loginModel)
+      .subscribe(resp => {
+
+        if (this.recordarme) {
+          localStorage.setItem('email', this.loginModel.email)
+        }
+
+        this.router.navigateByUrl('/home')
+
+      }, (error) => {
+
+        this._sa.mostrarAlerta('Error al iniciar sesion', 'error');
+       
+      });
 
   }
 

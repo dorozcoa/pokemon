@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import Swal, { SweetAlertIcon } from 'sweetalert2';
+import Swal, { SweetAlertIcon } from 'sweetalert2'
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,8 @@ export class SweetAlertService {
 
   constructor() { }
 
-  mostrarAlerta(message: string, icon: SweetAlertIcon) {
+
+  mostrarAlerta(mensaje: string, icon: SweetAlertIcon ) {
 
     const Toast = Swal.mixin({
       toast: true,
@@ -20,8 +22,9 @@ export class SweetAlertService {
     
     Toast.fire({
       icon: icon,
-      title: message
+      title: mensaje
     })
-
+    
   }
+
 }

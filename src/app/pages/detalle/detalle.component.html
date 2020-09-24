@@ -1,0 +1,35 @@
+<app-toolbar> </app-toolbar>
+
+<div class="main-container">
+  <div class="container">
+
+    <h1> {{ detalle.nombre | uppercase }} <small> </small></h1>
+    <hr>
+
+    <div class="row animated fadeIn fast">
+
+      <div class="col-md-4">
+
+        <img src="{{ detalle.imagen }}" class="imagen" alt="">
+      
+        <br><br>
+
+        <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+
+      </div>
+
+      <div class="col-md-8">
+        <h3> <strong>Tipo: </strong> {{ detalle.tipo }} </h3>
+        <hr>
+        <h3> <strong> Experiencia: </strong> {{ detalle.experiencia }} </h3>
+        <hr>
+        <h3> <strong> Movimientos: </strong> {{ detalle.movimientos }} </h3>
+        <hr>
+        <h3> <strong> Habilidades: </strong> {{ detalle.habilidades }} </h3>
+        <hr>
+      </div>
+
+    </div>
+
+  </div>
+</div>

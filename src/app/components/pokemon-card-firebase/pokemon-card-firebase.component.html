@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <mat-card-title> <strong> {{ pokemonModel.nombre }} </strong> </mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{ pokemonModel.imagen }}"
+                      height="150px" 
+                      alt="{{ pokemonModel.nombre }}">
+
+  <mat-card-content>
+   
+  </mat-card-content>
+  <mat-card-actions class="header">
+    <button mat-raised-button color="warn" (click)="eliminarFireBase( pokemonModel )" >Eliminar </button>
+  </mat-card-actions>
+  
+</mat-card>

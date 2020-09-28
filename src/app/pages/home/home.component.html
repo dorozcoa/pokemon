@@ -1,3 +1,51 @@
-<p>
-  home works!
-</p>
+<app-toolbar> </app-toolbar>
+
+
+<div class="main-container">
+  <div class="container">
+    <mat-tab-group (selectedTabChange)="getPokemonesFirebase( $event )">
+      <mat-tab label="Pokemon API">
+
+        <div class="example-form">
+          <mat-form-field class="example-full-width">
+            <input [(ngModel)]="search" name="search" type="text" placeholder="Buscar pokemon" aria-label="Number"
+              matInput [matAutocomplete]="auto">
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of options | filterText: search" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+
+        <div class="ancho">
+          <mat-spinner class="spinner" *ngIf="pokemones.length == 0"></mat-spinner>
+        </div>
+
+        <mat-grid-list cols="5" rowHeight="400px">
+          <mat-grid-tile *ngFor="let item of pokemones | filter: search ">
+            <app-pokemon-card class="animated fadeIn" [pokemonModel]="item"></app-pokemon-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+
+      </mat-tab>
+      <mat-tab label="Firebase">
+
+
+        <mat-grid-list cols="5" rowHeight="400px">
+          <mat-grid-tile *ngFor="let item of pokemonesFireBase">
+
+          <app-pokemon-card-firebase 
+            class="animated fadeIn" 
+            [pokemonModel]="item"
+            (eliminarPokemonEvent)="eliminarPokemon( $event )">
+          </app-pokemon-card-firebase>
+
+          </mat-grid-tile>
+        </mat-grid-list>
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

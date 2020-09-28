@@ -1,0 +1,19 @@
+.example-form {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.example-full-width {
+    width: 30%;
+}
+
+.ancho {
+    width: 100%;
+}
+
+.spinner {
+    display: block;
+    margin: auto;
+}

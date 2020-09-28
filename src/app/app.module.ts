@@ -11,13 +11,25 @@ import { HttpClientModule } from '@angular/common/http'
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FilterTextPipe } from './pipes/filter-text.pipe';
+import { DetalleComponent } from './pages/detalle/detalle.component';
+import { PokemonCardFirebaseComponent } from './components/pokemon-card-firebase/pokemon-card-firebase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegistroComponent
+    RegistroComponent,
+    ToolbarComponent,
+    PokemonCardComponent,
+    DetalleComponent,
+    PokemonCardFirebaseComponent,
+    FilterPipe,
+    FilterTextPipe
   ],
   imports: [
     BrowserModule,

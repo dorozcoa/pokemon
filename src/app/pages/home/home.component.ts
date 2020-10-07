@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
   pokemones: PokemonModel[] = [];
   pokemonesFireBase: PokemonModel[] = [];
 
-  cantidadPokemones: number = 20;
+  /*cantidadPokemones: number = 20;*/
+  cantidadPokemones: number = 151;
   options: string[] = [];
   search: string = '';
 
